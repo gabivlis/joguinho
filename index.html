@@ -1,26 +1,27 @@
-<!--Nome: Anna Julia de Moura nº: 2         Turma: 3°i         
-Nome: Gabriella  nº: 11                                
-Nome: Gustavo Roberto Coelho nº: 14                    
-Nome: Pedro Yudi Chibana nº: 19                  
-Nome: Vinicius Shinohara Barbosa nº: 20  -->
 
-<html lang="pt-BR">
-<head>
-    <title>Navezinha</title>
-    <meta charset="UTF-8">
 
-    <style>
-        canvas {
-            border:1px solid #d3d3d3;
-            background-color: #A0A0A0;
-        }
-    </style>
-   
-   <script src="gamesWeb.js"></script>
+<html> <head>
+    <title>Movimentos com Teclado</title>
+    <script src="gameWeb.js"></script>
+    </head> <body>
+        <canvas id="canv" width="800" heigth="700">
+            Este browser não suporta o objeto canvas do HTML5.
+            </canvas>
+        <script>
+            
+            canvas = document.getElementByid("canv");
+            ctx = canvas.getContext("2d");
+            nave = new Image();
+            nave.src = "imgens/nave.jpg";
+            x = 400 - nave.width/2;
+            nave.onload = function() {
+                ctx.drawImage(nave,x,700-160);
+                }
+            document.addEventListener("keydown",
+                function(evento){
+                    movimentoNaveTeclado(evento.key);
+                    });
 
-</head>
-
-<body onload="startGame();">      
-
-</body>
-</html>
+            
+        </script>
+    </body></html>
